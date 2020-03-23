@@ -4,3 +4,5 @@
 .venv/*
 /dj_database_url/
 /dj_database_url/*
+db.sqlite3
+*__pycache__/*
