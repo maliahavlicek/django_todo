@@ -26,8 +26,8 @@ SECRET_KEY = '@do#n(xkldw#+v0131l78@b87c^+-a7+j7%6il-s_pfv&0_e%d'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'simple-django-todo-mmh.herokuapp.com',
-    '127.0.0.1'
+    os.environ.get('HOSTNAME'),
+    os.environ.get('LOCAL_HOST_NAME')
 ]
 
 # Application definition
@@ -83,8 +83,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # }
 DATABASES = {
     'default':
-        dj_database_url.parse(
-            'postgres://mzyylsltgfnqde:50adbee2f1ca4b3eaf40e96d2f25cf723092e9130a705e71a76558fdb680f0b2@ec2-34-233-186-251.compute-1.amazonaws.com:5432/d8g4o5g6ftjcil')
+        dj_database_url.parse(os.environ.get('DATABASE_URL'))
 
 
 }
