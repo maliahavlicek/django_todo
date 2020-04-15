@@ -14,7 +14,7 @@
                 {% if item.done %}</strike>{% endif %}
             </td>
             <td>
-                <form method="POST" action="toggle/{{ item.id }}">
+                <form method="POST" action="toggle/{{ item.id }}/">
 
                     {% csrf_token %}
                     <input type="submit" value="Toggle"/>
